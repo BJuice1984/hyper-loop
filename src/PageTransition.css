@@ -1,0 +1,33 @@
+.page-enter {
+    opacity: 0;
+    animation: fadeIn 300ms ease-in forwards;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    30% {
+        opacity: 0.5;
+      }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .page-exit {
+    opacity: 1;
+    animation: fadeOut 2000ms ease-in forwards;
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    80% {
+        opacity: 0.9;
+      }
+    100% {
+      opacity: 0;
+    }
+  }
