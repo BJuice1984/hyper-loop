@@ -6,7 +6,7 @@ import '../../PageTransition.css';
 const StarFieldPage1 = () => {
  const stars = useMemo(() => {
     const stars = [];
-    for (let i = 0; i < 650; i++) {
+    for (let i = 0; i < 950; i++) {
       const size = Math.random() * 1;
       const left = Math.random() * 100;
       const top = Math.random() * 100;
@@ -60,7 +60,7 @@ useEffect(() => {
           }}
         />
       ))}
-      <Link className='title' to="/page2" >Bit Buster</Link>
+      <Link className='title page-enter' to="/page2" >Bit Buster</Link>
 
     </div>
   );

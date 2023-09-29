@@ -42,7 +42,7 @@ const StarFieldPage2 = () => {
           }}
         />
       ))}
-      <Link to="/" ></Link>
+      <Link className='title-page2' to="/" >Современные технологии</Link>
     </div>
   );
 };
