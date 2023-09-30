@@ -1,10 +1,10 @@
-import { useState, useEffect, useMemo } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useEffect, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './StarFieldPage1.css';
 import '../../PageTransition.css';
 import starSound from '../../sound/white-noise-loop-6-ripple-sound-effect-36856080.mp3';
 
-const StarFieldPage1 = () => {
+const StarFieldPage1 = ({ shouldAnimate, setShouldAnimate }) => {
  const stars = useMemo(() => {
     const stars = [];
     for (let i = 0; i < 950; i++) {
@@ -27,19 +27,10 @@ const StarFieldPage1 = () => {
     setShouldAnimate(true)
       setTimeout(() => {
         navigate('/page2');
+        setShouldAnimate(false)
     }, 1900);
     }
   };
-
-    const handleClick = (e) => {
-        e.preventDefault();
-    setShouldAnimate(true)
-      setTimeout(() => {
-        navigate('/page2');
-    }, 1900);
-    }
-
-const [shouldAnimate, setShouldAnimate] = useState(false);
 
 useEffect(() => {
     if (shouldAnimate) {
@@ -80,7 +71,6 @@ useEffect(() => {
           }}
         />
       ))}
-      <Link onClick={handleClick} className='title page-enter' to="/page2" >Bit Buster</Link>
     </div>
   );
 };

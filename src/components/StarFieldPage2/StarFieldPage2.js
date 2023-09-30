@@ -1,8 +1,8 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './StarFieldPage2.css';
 import '../../PageTransition.css';
 
-const StarFieldPage2 = () => {
+const StarFieldPage2 = ({ setShouldAnimate }) => {
   const stars = [];
   for (let i = 0; i < 150; i++) {
     const size = Math.random() * 3;
@@ -39,7 +39,6 @@ const StarFieldPage2 = () => {
           }}
         />
       ))}
-      <Link className='title-page2' to="/" >Современные технологии</Link>
     </div>
   );
 };
