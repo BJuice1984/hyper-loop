@@ -10,7 +10,9 @@ const StarFieldPage1 = () => {
       const size = Math.random() * 1;
       const left = Math.random() * 100;
       const top = Math.random() * 100;
-      stars.push({ size, left, top });
+      const isTwinkling = Math.random() < 0.1;
+      const twinklingDelay = Math.random() * 2000;
+      stars.push({ size, left, top, isTwinkling, twinklingDelay });
     }
     return stars;
   }, []);
@@ -27,10 +29,6 @@ const StarFieldPage1 = () => {
     }, 1900);
     }
   };
-
-  function getRandomTwinkleProbability() {
-  return Math.random() < 0.1;
-};
 
 const [shouldAnimate, setShouldAnimate] = useState(false);
 
@@ -51,9 +49,9 @@ useEffect(() => {
       {stars.map((star, index) => (
         <div
           key={index}
-          className={`star ${getRandomTwinkleProbability() ? 'twinkling' : ''}`}
+          className={`star ${star.isTwinkling ? 'twinkling' : ''}`}
           style={{
-            width: star.size + 'px',
+            width: star.size  + 'px',
             height: star.size + 'px',
             left: star.left + '%',
             top: star.top + '%',
