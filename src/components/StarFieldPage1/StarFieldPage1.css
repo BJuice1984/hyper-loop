@@ -17,7 +17,7 @@
   .star {
     position: absolute;
     background-color: white;
-    rotate: 45deg;
+    width: 1px;
   }
 
   .twinkling {
@@ -40,28 +40,29 @@
 
   .star-to-ray {
     animation: starToRay 5s linear forwards;
+    width: 40px;
   }
   
   @keyframes starToRay {
     0% {
       opacity: 1;
-      transform: translateX(0) translateY(0) translateZ(0) scaleX(0.1) rotateY(0)
+      transform: translateX(0) translateY(0) translateZ(0) scaleX(0) rotateY(0);
     }
     1% {
         opacity: 1;
-        transform: translateX(0) translateY(0) translateZ(10px) scaleX(0.1) rotateY(90deg)
+        transform: translateX(0) translateY(0) translateZ(10px) scaleX(0) rotateY(90deg)
       }
     10% {
         opacity: 1;
-        transform: translateX(0) translateY(0) translateZ(100px) scaleX(300) rotateY(90deg)
+        transform: translateX(0) translateY(0) translateZ(100px) scaleX(30) rotateY(90deg)
       }
     20% {
         opacity: 1;
-        transform: translateX(0) translateY(0) translateZ(150px) scaleX(400) rotateY(90deg)
+        transform: translateX(0) translateY(0) translateZ(150px) scaleX(40) rotateY(90deg)
     }
     100% {
       opacity: 0;
-      transform: translateX(0) translateY(0) translateZ(2000px) scaleX(700) rotateY(90deg)
+      transform: translateX(0) translateY(0) translateZ(2000px) scaleX(70) rotateY(90deg)
     }
   }
 

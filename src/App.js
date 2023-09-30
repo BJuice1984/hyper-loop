@@ -8,12 +8,10 @@ import StarFieldPage2 from './components/StarFieldPage2/StarFieldPage2';
 function App() {
   return (
     <div className="App">
-      
         <Routes>
           <Route path="/" element={ <StarFieldPage1/> } />
           <Route path="/page2" element={ <StarFieldPage2/> } />
         </Routes>
-
     </div>
   );
 }

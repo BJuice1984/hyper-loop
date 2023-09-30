@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './StarFieldPage1.css';
 import '../../PageTransition.css';
+import starSound from '../../sound/white-noise-loop-6-ripple-sound-effect-36856080.mp3';
 
 const StarFieldPage1 = () => {
  const stars = useMemo(() => {
@@ -30,6 +31,14 @@ const StarFieldPage1 = () => {
     }
   };
 
+    const handleClick = (e) => {
+        e.preventDefault();
+    setShouldAnimate(true)
+      setTimeout(() => {
+        navigate('/page2');
+    }, 1900);
+    }
+
 const [shouldAnimate, setShouldAnimate] = useState(false);
 
 useEffect(() => {
@@ -38,8 +47,22 @@ useEffect(() => {
         starElements.forEach((star, index) => {
         setTimeout(() => {
         star.classList.add('star-to-ray');
-      }, index * 2);
+      }, index * 1.2);
     });
+
+    const audioElement = new Audio(starSound);
+    audioElement.play();
+    audioElement.volume = 0.1;
+     setTimeout(() => {
+      const fadeOutInterval = setInterval(() => {
+        if (audioElement.volume > 0.001) {
+          audioElement.volume -= 0.001;
+        } else {
+          audioElement.pause();
+          clearInterval(fadeOutInterval);
+        }
+      }, 10);
+    }, 1000);
     }
     
   }, [shouldAnimate]);
@@ -51,15 +74,13 @@ useEffect(() => {
           key={index}
           className={`star ${star.isTwinkling ? 'twinkling' : ''}`}
           style={{
-            width: star.size  + 'px',
             height: star.size + 'px',
             left: star.left + '%',
             top: star.top + '%',
           }}
         />
       ))}
-      <Link className='title page-enter' to="/page2" >Bit Buster</Link>
-
+      <Link onClick={handleClick} className='title page-enter' to="/page2" >Bit Buster</Link>
     </div>
   );
 };

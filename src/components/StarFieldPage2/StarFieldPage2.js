@@ -4,11 +4,12 @@ import '../../PageTransition.css';
 
 const StarFieldPage2 = () => {
   const stars = [];
-  for (let i = 0; i < 50; i++) {
-    const size = Math.random() * 5;
+  for (let i = 0; i < 150; i++) {
+    const size = Math.random() * 3;
     const left = Math.random() * 100;
     const top = Math.random() * 100;
-    stars.push({ size, left, top });
+    const isTwinkling = Math.random() < 0.1;
+    stars.push({ size, left, top, isTwinkling });
   }
 
   const navigate = useNavigate();
@@ -24,16 +25,12 @@ const StarFieldPage2 = () => {
     }
   };
 
-    function getRandomTwinkleProbability() {
-  return Math.random() < 0.3;
-}
-
   return (
     <div className="star-field-container page-enter" onWheel={handleScroll}>
       {stars.map((star, index) => (
         <div
           key={index}
-          className={`star ${getRandomTwinkleProbability() ? 'twinkling-page-2' : ''}`}
+          className={`star ${star.isTwinkling ? 'twinkling-page-2' : ''}`}
           style={{
             width: star.size + 'px',
             height: star.size + 'px',
