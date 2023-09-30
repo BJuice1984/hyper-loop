@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/hyper-loop/static/css/main.1387c82f.css",
-    "main.js": "/hyper-loop/static/js/main.c4485934.js",
+    "main.css": "/hyper-loop/static/css/main.59497746.css",
+    "main.js": "/hyper-loop/static/js/main.33463754.js",
     "static/js/787.bab20746.chunk.js": "/hyper-loop/static/js/787.bab20746.chunk.js",
     "static/media/Benzin-Bold.woff": "/hyper-loop/static/media/Benzin-Bold.76158c10a57690548142.woff",
     "static/media/Benzin-Bold.woff2": "/hyper-loop/static/media/Benzin-Bold.8a2face31d8ba1bbe4df.woff2",
+    "static/media/white-noise-loop-6-ripple-sound-effect-36856080.mp3": "/hyper-loop/static/media/white-noise-loop-6-ripple-sound-effect-36856080.a500405dc96c303b7f66.mp3",
     "index.html": "/hyper-loop/index.html",
-    "main.1387c82f.css.map": "/hyper-loop/static/css/main.1387c82f.css.map",
-    "main.c4485934.js.map": "/hyper-loop/static/js/main.c4485934.js.map",
+    "main.59497746.css.map": "/hyper-loop/static/css/main.59497746.css.map",
+    "main.33463754.js.map": "/hyper-loop/static/js/main.33463754.js.map",
     "787.bab20746.chunk.js.map": "/hyper-loop/static/js/787.bab20746.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1387c82f.css",
-    "static/js/main.c4485934.js"
+    "static/css/main.59497746.css",
+    "static/js/main.33463754.js"
   ]
 }
