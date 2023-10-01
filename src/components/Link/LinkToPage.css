@@ -10,8 +10,10 @@
     line-height: 10vmin;
     width: 90vmin;
     color: transparent;
+    background-image: -webkit-linear-gradient(to bottom, #fffb00, #cc8b00);
     background-image: linear-gradient(to bottom, #fffb00, #cc8b00);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 0 5px rgba(255, 0, 255, 0.7), 0 0 25px rgba(102, 0, 204, 0.7);
     transform: translateZ(-1vmin);
@@ -22,15 +24,19 @@
   }
   
   .titleLinkToPageMove {
+    will-change: transform;
+    -webkit-transform: translateZ(10vmin);
     transform: translateZ(10vmin);
     animation: moveText 2s ease-in-out;
   }
   
   @keyframes moveText {
     0% {
+      -webkit-transform: translateZ(-1vmin);
       transform: translateZ(-1vmin);
     }
     100% {
+      -webkit-transform: translateZ(10vmin);
       transform: translateZ(10vmin);
     }
   }
@@ -47,9 +53,11 @@
     line-height: 12vmin;
     width: 100vmin;
     color: transparent;
+    background-image: -webkit-linear-gradient(to bottom, #ff0800, #6600cc); /* Добавлен -webkit- префикс для Safari */
     background-image: linear-gradient(to bottom, #ff0800, #6600cc);
     text-shadow: 0 0 5px rgba(255, 0, 255, 0.7), 0 0 10px rgba(102, 0, 204, 0.7);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     transform: translateZ(-8vmin);
     transition: transform 2s ease-in-out;
@@ -59,16 +67,20 @@
   }
 
   .titleLinkToPage2Opacity {
+    will-change: transform;
+    -webkit-transform: translateZ(10vmin);
     transform: translateZ(10vmin);
     animation: opacityText 2s ease-in-out;
   }
   
   @keyframes opacityText {
     0% {
+      -webkit-transform: translateZ(-5vmin);
       transform: translateZ(-5vmin);
       opacity: 0;
     }
     100% {
+      -webkit-transform: translateZ(-1vmin);
       transform: translateZ(-1vmin);
       opacity: 1;
     }
@@ -79,6 +91,8 @@
   }
 
   .titleLinkToPage2Visible {
+    will-change: transform;
+    -webkit-transform: translateZ(-1vmin);
     transform: translateZ(-1vmin);
     opacity: 1;
   }
