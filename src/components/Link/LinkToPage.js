@@ -1,13 +1,23 @@
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './LinkToPage.css';
 
-const LinkToPage = ({ shouldAnimate }) => {
+const LinkToPage = ({ shouldAnimate, setShouldAnimate }) => {
     const location = useLocation();
+    const navigate = useNavigate();
+
+     const handleClickToPage2 = (e) => {
+        e.preventDefault();
+        setShouldAnimate(true)
+        setTimeout(() => {
+        navigate('/page2');
+        setShouldAnimate(false)
+    }, 1900);
+    }
 
     return (
         <>
-        <h2 className={`titleLinkToPage ${shouldAnimate ? 'titleLinkToPageMove' : ''} ${location.pathname === '/page2' ? 'titleLinkToPage2None' : ''}`} to="/page2">BIT BUSTER</h2>
-        <h2 className={`titleLinkToPage2 ${shouldAnimate ? 'titleLinkToPage2Opacity' : ''} ${location.pathname === '/page2' ? 'titleLinkToPage2Visible' : ''}`} to="/">Современные технологии</h2>
+        <Link onClick={handleClickToPage2} className={`titleLinkToPage ${shouldAnimate ? 'titleLinkToPageMove' : ''} ${location.pathname === '/page2' ? 'titleLinkToPage2None' : ''}`}>Bit Buster</Link>
+        <Link className={`titleLinkToPage2 ${shouldAnimate ? 'titleLinkToPage2Opacity' : ''} ${location.pathname === '/page2' ? 'titleLinkToPage2Visible' : ''}`} to="/">Современные технологии</Link>
         </>
     );
 }

@@ -17,8 +17,8 @@
     transform: translateZ(-1vmin);
     transition: transform 2s ease-in-out;
     transition-delay: 0.3s;
-    z-index: 10;
-    cursor: default;
+    z-index: 15;
+    text-transform: uppercase;
   }
   
   .titleLinkToPageMove {
@@ -55,9 +55,7 @@
     transition: transform 2s ease-in-out;
     transition-delay: 0.3s;
     z-index: 10;
-    cursor: none;
     opacity: 0;
-    cursor: default;
   }
 
   .titleLinkToPage2Opacity {

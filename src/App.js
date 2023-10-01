@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="App">
-        <LinkToPage shouldAnimate={shouldAnimate}/>
+        <LinkToPage shouldAnimate={shouldAnimate} setShouldAnimate={setShouldAnimate}/>
         <Routes location={location} key={location.pathname}>
             <Route index element={ <StarFieldPage1 shouldAnimate={shouldAnimate} setShouldAnimate={setShouldAnimate}/> } />
             <Route path="/page2" element={ <StarFieldPage2 setShouldAnimate={setShouldAnimate}/> } />
