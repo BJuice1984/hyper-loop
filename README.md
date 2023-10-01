@@ -1,5 +1,6 @@
 <h1 align="center">Тестовое задание Hyperloop</h1>
 ![Alt text](./src/images/image.png)
+<image src="./src/images/image.png" alt="Hyperloop">
 
 ### О проекте:
 
